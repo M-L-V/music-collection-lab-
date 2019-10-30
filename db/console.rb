@@ -22,7 +22,8 @@ album2 = Album.new( {'title' => 'Eugene\'s Blue Jeans', 'genre' => 'country', 'a
 
 album2.save()
 
-
+album3 = Album.new( {'title' => 'Juan Way Road', 'genre' => 'mumblecore', 'artist_id' => artist1.id} )
+album3.save
 
 binding.pry
 

@@ -36,6 +36,15 @@ def save
 end
 
 
+  def artist_from_album()
+    sql = "SELECT * FROM artists WHERE id = $1"
+    values = [@artist_id]
+    artist = SqlRunner.run(sql, values)
+    return artist[0]
+
+  end
+
+
   def self.delete_all()
     sql = "DELETE FROM albums"
     SqlRunner.run(sql)
@@ -46,6 +55,7 @@ end
     albums = SqlRunner.run(sql)
     return albums.map{|album| Album.new(album)}
   end
+
 
 
 
